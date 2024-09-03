@@ -21,7 +21,7 @@ async def get_post():
 
 @app.post("/post")
 def create_post(new_post: Post):    #extraction of data from the body 
-    print(new_post)
+    print(new_post.title)
     return{"new_post": "Data"}
 
 #return{"Create": "New post successfully"}
