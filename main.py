@@ -11,6 +11,20 @@ class Post(BaseModel):
     publish: bool = True
     rating: Optional[int] = None
 
+my_posts = [
+    {
+        "titie": "title of post 1", 
+        "content": "contents of post 1",
+        "id": 1
+    },
+    {
+        "title": "favourite foods",
+        "content": "I like amala",
+        "id": 2
+    }
+
+]
+
 # @=decorator
 @app.get("/")
 async def root():
@@ -18,7 +32,7 @@ async def root():
 
 @app.get("/posts")
 async def get_post():
-    return {"This is your API request..."}
+    return {"data": my_posts}
 
 # The first path operation that matches will run
 
